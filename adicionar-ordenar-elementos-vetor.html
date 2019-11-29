@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Atividade</title>
+    <script>
+    	var objetos = Array('Cadeira', 'Impressora', 'Garfo')
+    	var i = 0
+
+    	function Adicionar(){
+    		//recupera o valor no campo texto
+    		document.getElementById('campo_texto').value
+    		//se estiver vazio vai disparar o alerta para digitar um valor
+    		if (document.getElementById('campo_texto').value == '') {
+    			alert("Informe um valor válido")
+    		}
+    		//se o item digitado ja existir dentro do vetor vai disparar um alerta de objeto já adicionado
+    		else if(document.getElementById('campo_texto').value == objetos[i]){
+    			alert("Objeto ja adicionado")
+    			i++
+    		}
+    		//se não existir dentro do vetor ele vai ser adicionado na ultima posição com o push() e depois vai limpar o campo de texto
+    		else{
+    			objetos.push(document.getElementById('campo_texto').value)
+    			document.getElementById('campo_texto').value = ''
+    		}
+    		console.log(objetos)
+    	}
+    	//Ordena os elementos do vetor por ordem alfabetica
+    	function Ordenar(){
+    		objetos.sort()
+    		console.log(objetos)
+    	}
+    </script>
+</head>
+<body>
+	<!-- campo de texto -->
+    <input  type="text" name="texto" id="campo_texto">
+    <!-- botao que dispara a função adicionar()-->
+    <button onclick="Adicionar()" id="add">Adicionar</button>
+    <!--botao que dispara a função ordenar() -->
+    <button onclick="Ordenar()" id="ord">Ordenar</button>
+
+</body>
+
+</html>
